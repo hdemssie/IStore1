@@ -1,0 +1,24 @@
+﻿<h2> Books</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <tr ng-repeat="book in controller.books">
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td><a ng-href="/detailBook/{{book.id}}" class="btn"> Detail</a></td>
+            <td><a ng-href="/editBook/{{book.id}}" class="btn btn-primary"> Edit</a></td>
+            <td><a ng-href="/deleteBook/{{book.id}}" class="btn btn-danger">Delete</a></td>
+
+        </tr>
+    </tbody>
+
+</table>
+<a href="/addBook" class="btn btn-success"> Add Book </a>
