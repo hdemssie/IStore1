@@ -13,6 +13,34 @@ namespace IStore_ {
                 controller: IStore_.Controllers.BookController,
                 controllerAs: 'controller'
             })
+
+    //-------------------------- Log in ---------------------->>>>
+
+            .state('secret', {
+                url: '/secret',
+                templateUrl: '/ngApp/views/secret.html',
+                controller: IStore_ .Controllers.SecretController,
+                controllerAs: 'controller'
+            })
+            .state('login', {
+                url: '/login',
+                templateUrl: '/ngApp/views/login.html',
+                controller: IStore_ .Controllers.LoginController,
+                controllerAs: 'controller'
+            })
+            .state('register', {
+                url: '/register',
+                templateUrl: '/ngApp/views/register.html',
+                controller: IStore_ .Controllers.RegisterController,
+                controllerAs: 'controller'
+            })
+            .state('externalRegister', {
+                url: '/externalRegister',
+                templateUrl: '/ngApp/views/externalRegister.html',
+                controller: IStore_ .Controllers.ExternalRegisterController,
+                controllerAs: 'controller'
+            })     
+    //----------------------------------Add------------------------
             .state('addBook', {
                 url: '/addBook',
                 templateUrl: '/ngApp/views/addBook.html',
@@ -20,7 +48,7 @@ namespace IStore_ {
                 controllerAs: 'controller'
             })
 
-            //---------------- Delete --------------------------
+    //------------------------- Delete --------------------------
             .state('deleteBook', {
                 url: '/deleteBook/:id',
                 templateUrl: '/ngApp/views/deleteBook.html',
@@ -28,7 +56,7 @@ namespace IStore_ {
                 controllerAs: 'controller'
             })
 
-            //---------------- Edit --------------------------
+    //----------------------------- Edit --------------------------
 
             .state('editBook', {
                 url: '/editBook/:id',
@@ -48,7 +76,7 @@ namespace IStore_ {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'
             });
-//======================================================================Ended here
+//=======================================================Ended here====O
         // Handle request for non-existent route
         $urlRouterProvider.otherwise('/notFound');
 
