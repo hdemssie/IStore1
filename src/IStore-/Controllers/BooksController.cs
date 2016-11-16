@@ -23,7 +23,9 @@ namespace IStore_.Controllers
             [HttpGet]
             public IActionResult Get()
             {
-            return Ok(_service.GetAllBook());
+           
+                var test=_service.GetAllBook();
+            return Ok(test);
             }
 
 

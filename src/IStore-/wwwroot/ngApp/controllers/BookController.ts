@@ -36,8 +36,9 @@ namespace IStore_.Controllers {
         }
 
     }
+   
 
-    //==============Detail==========================>>>>>
+    //=======================================Detail==========================>>>>>
 
     export class BookDetailController {
         private BookResource;
@@ -60,16 +61,16 @@ namespace IStore_.Controllers {
         }
 
     }
-    //----------------Edit------------------->>
+    //---------------------------------------------Edit------------------->>
 
     export class BookEditController {
         private BookResource;
         public book;
-        public message = "hello!"
+     
 
         public getBookById(id: number) {
             this.book = this.BookResource.get({ id: id });
-            console.log("I have run...");
+           
         }
         public save() {
             this.BookResource.save(this.book).$promise
@@ -87,7 +88,7 @@ namespace IStore_.Controllers {
         ) {
             this.BookResource = $resource(`/api/books/:id`);
             this.getBookById($stateParams[`id`]);
-            console.debug(this.book);
+          
 
         }
 

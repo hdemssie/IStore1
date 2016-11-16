@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace IStore_.Models
 {
-    public class Book
+    public class Author
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string AuthorName { get; set; }
-        public decimal Price { get; set; }
-        public int PageNumber { get; set; }
+        public List<Book> Books { get; set; }
     }
 }

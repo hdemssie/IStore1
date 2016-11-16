@@ -4,7 +4,7 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Author</th>
+            <th>AuthorName</th>
         </tr>
     </thead>
     <tbody>
@@ -12,7 +12,7 @@
 
         <tr ng-repeat="book in controller.books">
             <td>{{book.name}}</td>
-            <td>{{book.author}}</td>
+            <td>{{book.authorName}}</td>
             <td><a ng-href="/detailBook/{{book.id}}" class="btn"> Detail</a></td>
             <td><a ng-href="/editBook/{{book.id}}" class="btn btn-primary"> Edit</a></td>
             <td><a ng-href="/deleteBook/{{book.id}}" class="btn btn-danger">Delete</a></td>

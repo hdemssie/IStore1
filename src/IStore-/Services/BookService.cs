@@ -13,12 +13,14 @@ namespace IStore_.Interfaces
         private IGenericRepository _repo;
         public List<Book> GetAllBook()
         {
-            return _repo.Query<Book>().ToList();
+            
+                var test=_repo.Query<Book>().ToList();
+            return test;
         }
         //Get single Book by Id(called by controller Get(id) method)
         public Book GetBookById(int id)
         {
-            var book = _repo.Query<Book>().Where(m => m.Id == id).FirstOrDefault();
+            var book = _repo.Query<Book>().Where(b => b.Id == id).FirstOrDefault();
 
             return book;
         }
@@ -35,10 +37,10 @@ namespace IStore_.Interfaces
             }
 
         }
-        //Delete singl book from the database (called by Delete(id method)
+        //Delete single book from the database (called by Delete(id method)
         public void DeleteBook(int id)
         {
-            Book bookToDelete = _repo.Query<Book>().Where(m => m.Id == id).FirstOrDefault();
+            Book bookToDelete = _repo.Query<Book>().Where(b => b.Id == id).FirstOrDefault();
             _repo.Delete(bookToDelete);
         }
 
