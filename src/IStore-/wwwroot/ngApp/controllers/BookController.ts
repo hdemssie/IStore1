@@ -45,8 +45,8 @@ namespace IStore_.Controllers {
         public book;
 
         public getBookById(id: number) {
-            this.book = this.BookResource.get({ id: id });
-
+            //this.book = this.BookResource.get({ id: id });
+            return this.BookResource.get({ id: id });
         }
 
         constructor(
@@ -56,7 +56,7 @@ namespace IStore_.Controllers {
         ) {
             this.BookResource = $resource(`/api/books/:id`);
             this.book = this.getBookById($stateParams[`id`]);
-            console.debug(this.book);
+            //console.debug(this.book);
 
         }
 

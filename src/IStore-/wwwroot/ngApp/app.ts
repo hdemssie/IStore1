@@ -39,8 +39,32 @@ namespace IStore_ {
                 templateUrl: '/ngApp/views/externalRegister.html',
                 controller: IStore_ .Controllers.ExternalRegisterController,
                 controllerAs: 'controller'
-            })     
-    //----------------------------------Add------------------------
+            })  
+
+    //--------------------------------Author-----------------------
+            .state('author', {
+                url: '/author',
+                templateUrl: '/ngApp/views/Author.html',
+                controller: IStore_.Controllers.AuthorController,
+                controllerAs: 'controller'
+            })   
+
+    //-------------------------------Add-Author-----------------------
+            .state('addauthorBook', {
+                url: '/addauthorBook',
+                templateUrl: '/ngApp/views/AddAuthor.html',
+                controller: IStore_.Controllers.AddAuthorController,
+                controllerAs: 'controller'
+            })   
+
+    //-------------------------------Book List----------------------->>>
+            .state('bookList', {
+                url: '/bookList/:id',
+                templateUrl: '/ngApp/views/bookList.html',
+                controller: IStore_.Controllers.AuthorBookListController,
+                controllerAs: 'controller'
+            })   
+    //----------------------------------Add-Book-----------------------
             .state('addBook', {
                 url: '/addBook',
                 templateUrl: '/ngApp/views/addBook.html',
@@ -48,15 +72,24 @@ namespace IStore_ {
                 controllerAs: 'controller'
             })
 
-    //------------------------- Delete --------------------------
+    //------------------------- Delete -Book-------------------------
             .state('deleteBook', {
                 url: '/deleteBook/:id',
                 templateUrl: '/ngApp/views/deleteBook.html',
                 controller: IStore_.Controllers.BookDeleteController,
                 controllerAs: 'controller'
             })
+    //----------------------------- Detail-Book-------------------------
 
-    //----------------------------- Edit --------------------------
+            .state('detailBook', {
+                url: '/detailBook/:id',
+                templateUrl: '/ngApp/views/detailBook.html',
+                controller: IStore_.Controllers.BookDetailController,
+                controllerAs: 'controller'
+            })
+
+
+    //----------------------------- Edit -Book-------------------------
 
             .state('editBook', {
                 url: '/editBook/:id',

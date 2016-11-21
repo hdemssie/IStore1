@@ -9,5 +9,6 @@ namespace IStore_.Services
         List<Author> GetAllAuthor();
         Author GetAuthorById(int id);
         void SaveAuthor(Author author);
+        Author GetBooksByAuthor(int id);
     }
 }

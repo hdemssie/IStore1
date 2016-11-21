@@ -8,9 +8,10 @@ using IStore_.Data;
 namespace IStore_.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20161116214235_Author")]
+    partial class Author
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -210,7 +211,7 @@ namespace IStore_.Data.Migrations
 
             modelBuilder.Entity("IStore_.Models.Book", b =>
                 {
-                    b.HasOne("IStore_.Models.Author", "Author")
+                    b.HasOne("IStore_.Models.Author")
                         .WithMany("Books")
                         .HasForeignKey("AuthorId");
                 });

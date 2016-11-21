@@ -9,5 +9,7 @@ namespace IStore_.Interfaces
         List<Book> GetAllBook();
         Book GetBookById(int id);
         void SaveBook(Book book);
+        List<Book> getBookByAuthorId(int id);
+
     }
 }

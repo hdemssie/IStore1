@@ -3,25 +3,49 @@
     <title>IStore-</title>
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-1L94saFXWAvEw88RkpRz8r28eQMvt7kG9ux3DdCqya/P3CfLNtgqzMnyaUa49Pl2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--  theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css">
     <base href="/" />
 </head>
 <body ng-controller="AccountController as account">
+    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">IStore</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Books </a></li>
+                    <li><a href="/author">Author</a></li>
+                   
+                </ul>
+             
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="secret">secret</a></li>
+                    <li><a href="/login" ng-show="!account.isLoggedIn()">Login</a></li>
+                    <li><a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
+                    <li>
+                        <div ng-show="account.isLoggedIn()">
+                            [{{account.getUserName()}}]
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
     <div class="container">
         <h1>IStore-</h1>
-        <div>
-          <a href="/">Home</a> /
-           <a href="/about">About</a>
-
-           / <a href="/secret">Secret</a> /
-           <a href="/login" ng-show="!account.isLoggedIn()">Login</a>
-           <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
-           <div ng-show="account.isLoggedIn()">
-               [{{account.getUserName()}}]
-           </div> 
-        </div>
         <hr />
-
         <ui-view></ui-view>
     </div>
 
@@ -33,15 +57,16 @@
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!-- App Files-->
     <script src="/ngapp/app.js"></script>
     <script src="/ngapp/controllers/controllers.js"></script>
     <script src="/ngapp/services/services.js"></script>
     <script src="~/ngApp/controllers/BookController.js"></script>
+    <script src="~/ngApp/controllers/AuthorController.js"></script>
     <!-----add on the file,,,,,<script src="~/ngApp/controllers/BookController.js"></script>,,,,,-->
-    
-
-
+ 
     <!-- Security -->
     <script src="/ngapp/controllers/accountcontroller.js"></script>
     <script src="/ngapp/services/accountservice.js"></script>

@@ -24,6 +24,14 @@ namespace IStore_.Interfaces
 
             return book;
         }
+
+        public List<Book> getBookByAuthorId(int id)
+        {
+            var data = _repo.Query<Book>().Where(b => b.Author.
+            Id == id).ToList();
+            return data;
+
+        }
         //post single move to the database (called by Post(book)methiod)
         public void SaveBook(Book book)
         {

@@ -1,0 +1,24 @@
+﻿
+<h2> Author</h2>
+
+<table class="table table-bordered table-striped table-hover">
+<thead>
+    <tr class="info">
+        <th>Name</th>
+        
+    </tr>
+</thead>
+<tbody>
+    <tr ng-repeat="a in controller.author">
+
+        <td><a> {{a.name}}</a></td>
+        <td><a ng-href="/editAuthor/{{author.id}}" class="btn btn-primary"> Edit</a></td>
+        <td> <a ng-href="/deleteAuthor/{{author.id}}" class="btn btn-danger">Delete</a></td>
+
+</tr>
+</tbody>
+
+</table>
+
+<a href="/addauthorBook" class="btn btn-success"> Add Author</a>
+
